@@ -62,7 +62,8 @@ app.get('/*?', function(request, response){
 });
 
 
-/**
-Start the app on the listed port
-*/
-app.listen(app.get('port'));
+// start app
+var p = app.get('port');
+app.listen(p);
+console.log("listening on port %d", p);
+

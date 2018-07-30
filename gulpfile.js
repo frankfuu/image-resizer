@@ -11,7 +11,7 @@ var gulp = require('gulp'),
 
 
 gulp.task('lint', function () {
-  gulp.src(['src/**/*.js', 'index.js', 'test.js', 'gulpfile.js'])
+  gulp.src(['src/**/*.js', 'index.js', 'server.js', 'gulpfile.js'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter(stylish));
 });
@@ -71,7 +71,7 @@ function env(){
 // gulp.task('watch', ['lint', 'test'], function () {
 gulp.task('watch', ['lint'], function () {
   nodemon({
-    script: 'test.js',
+    script: 'server.js',
     ext: 'js html',
     env: env()
   // }).on('restart', ['lint', 'test']);
